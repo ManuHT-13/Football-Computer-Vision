@@ -1,3 +1,14 @@
+# Datasets and videos
+#data/*
+#!data/.gitkeep
+
+# Models
+yolo11l.pt
+
+# Results
+#runs/
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

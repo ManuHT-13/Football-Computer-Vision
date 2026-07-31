@@ -1,0 +1,7 @@
+ultralytics
+supervision
+torch
+torchvision
+opencv-python
+albumentations
+xgboost
