@@ -5,3 +5,5 @@ torchvision
 opencv-python
 albumentations
 xgboost
+SoccerNet
+python-dotenv

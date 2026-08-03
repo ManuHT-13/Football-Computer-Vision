@@ -1,6 +1,6 @@
 # Datasets and videos
-#data/*
-#!data/.gitkeep
+datasets/*
+!datasets/.gitkeep
 
 # Models
 yolo11l.pt
