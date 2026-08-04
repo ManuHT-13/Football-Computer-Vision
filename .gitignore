@@ -3,10 +3,11 @@ datasets/*
 !datasets/.gitkeep
 
 # Models
-yolo11l.pt
+yolo11*.pt
 
 # Results
-#runs/
+runs/*
+!runs/.gitkeep
 
 
 # Byte-compiled / optimized / DLL files
