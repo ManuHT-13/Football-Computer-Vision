@@ -8,7 +8,7 @@ For football object detection I ended up choosing Yolov11n due to hardware limit
 The YOLO model will be fine-tuned with SoccerNet's gamestate-2024 datasets, it has player, refeere, goalkeeper and ball as classes and over 70GBs worth of football recordings.
 
 # Preprocess
-I made a subsample of Soccernet's gamestate-2024 dataset by frame striding the original recordings. This decreases the image number from 42000 to 8000. The immediate frames don't give the model that much information so this shouldn't decrease performance.
+I made a subsample of Soccernet's gamestate-2024 dataset by frame striding the original recordings. This decreases the image number from 42000 to 8000, reducing redundancy between consecutive frames, trading some training diversity for feasible training time on limited hardware.
 
 # Training
 The Yolo model will be fine-tuned with said dataset, using an image size of 960 and a bach number of 6 in 100 epochs, with 20 iterations of patience if the model converges earlier. Training results are monitorized in real-time via Tensorboard, which Ultralytics has native support with.

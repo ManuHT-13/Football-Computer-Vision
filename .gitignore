@@ -9,6 +9,13 @@ yolo11*.pt
 runs/*
 !runs/.gitkeep
 
+# Kaggle outputs
+kaggle/
+
+# Checkpoints
+best.pt
+data.yaml
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
