@@ -12,9 +12,8 @@ runs/*
 # Kaggle outputs
 kaggle/
 
-# Checkpoints
-best.pt
-data.yaml
+# Checkpoints models
+checkpoints/*/weights/
 
 
 # Byte-compiled / optimized / DLL files

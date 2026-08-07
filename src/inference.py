@@ -1,5 +1,14 @@
 from ultralytics import YOLO
+import argparse
 
-model = YOLO("best.pt")
+parser = argparse.ArgumentParser()
+parser.add_argument("--model", required=True)
+parser.add_argument("--sample", required=True)
+parser.add_argument("--dest", default="results")
+parser.add_argument("--name", default="predict")
 
-result = model.predict(source="datasets/video.mp4", save=True)
+args = parser.parse_args()
+
+model = YOLO(args.model)
+
+result = model.predict(source=args.sample, save=True, project=args.dest, name=args.name)

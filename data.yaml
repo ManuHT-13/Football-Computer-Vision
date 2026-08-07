@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 4
+names: ['ball', 'goalkeeper', 'player', 'referee']
+
+roboflow:
+  workspace: fieldvision
+  project: soccer-1zdbh
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/fieldvision/soccer-1zdbh/dataset/1
