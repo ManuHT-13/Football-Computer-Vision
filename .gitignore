@@ -1,6 +1,7 @@
 # Datasets and videos
 datasets/*
 !datasets/.gitkeep
+!datasets/demo*.mp4
 
 # Models
 yolo11*.pt
