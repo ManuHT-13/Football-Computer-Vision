@@ -14,7 +14,11 @@ I made a subsample of Soccernet's gamestate-2024 dataset by frame striding the o
 # Training
 Training is being done via Kaggle with different configurations, YOLO11 models and datasets.
 
-# Interesting documents
+# Object detection demo
+
+![Football Computer Vision](demo/demo.gif)
+
+# Documents of interest
 Ball tracking: https://blog.roboflow.com/tracking-ball-sports-computer-vision/
 
 # Libraries
