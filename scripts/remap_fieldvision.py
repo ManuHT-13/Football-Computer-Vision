@@ -36,7 +36,7 @@ for split in splits:
                 continue
 
             if old_id not in remap:
-                raise ValueError(f"class id inesperado {old_id} en {label_file}")
+                raise ValueError(f"unknown class id {old_id} in {label_file}")
 
             parts[0] = str(remap[old_id])
             new_lines.append(" ".join(parts))
@@ -47,5 +47,5 @@ for split in splits:
             label_file.write_text("")
             dropped_files += 1
 
-print(f"\nLíneas descartadas (clase junk): {dropped_lines}")
-print(f"Archivos que quedaron vacíos: {dropped_files}")
+print(f"\nDropped lines: {dropped_lines}")
+print(f"Dropped files: {dropped_files}")
