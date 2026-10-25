@@ -2,7 +2,7 @@
 
 The pipeline turns a match video into player tracks and an annotated overview. It detects people and the ball, maps the camera view to the pitch, assigns teams, and can add a minimap and match statistics.
 
-Three Kaggle notebooks cover object detection, pitch-line estimation and player re-identification. They expect a GPU and datasets attached in Kaggle; the training datasets are not included here.
+Three Kaggle notebooks cover object detection, pitch-line estimation and player re-identification.
 
 # Preview
 ![Project Demo](demo/demo.gif)
