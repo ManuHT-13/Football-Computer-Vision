@@ -11,4 +11,4 @@ if not soccernet_password:
 
 downloader = SoccerNetDownloader(LocalDirectory="/datasets/soccernet")
 downloader.password = soccernet_password
-downloader.downloadDataTask(task="gamestate-2024", split=["train", "valid", "test", "challenge"])
+downloader.downloadDataTask(task="tracking-2023", split=["train", "valid", "test"])

@@ -1,6 +1,6 @@
 # Datasets and videos
 datasets/*
-!datasets/.gitkeep
+!datasets/*/.gitkeep
 
 # Models
 yolo11*.pt
@@ -8,12 +8,14 @@ yolo11*.pt
 # Results
 runs/*
 !runs/.gitkeep
+!runs/*.csv
 
 # Kaggle outputs
 kaggle/
 
 # Checkpoints models
-checkpoints/*/weights/
+checkpoints/*/*/weights/
+checkpoints/*/*.pt
 
 
 # Byte-compiled / optimized / DLL files
