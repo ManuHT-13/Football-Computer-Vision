@@ -9,6 +9,7 @@ yolo11*.pt
 runs/*
 !runs/.gitkeep
 !runs/*.csv
+!runs/*.gif
 
 # Kaggle outputs
 kaggle/

@@ -4,6 +4,9 @@ The pipeline turns a match video into player tracks and an annotated overview. I
 
 Three Kaggle notebooks cover object detection, pitch-line estimation and player re-identification. They expect a GPU and datasets attached in Kaggle; the training datasets are not included here.
 
+# Preview
+![Project Demo](demo/demo.gif)
+
 ## Repository layout
 
 ```text
@@ -66,7 +69,7 @@ python pipeline\render.py --help
 
 ## Training
 
-The training notebooks run in Kaggle. Attach the dataset described in each section and enable a GPU. Change the paths in a notebook if your Kaggle input or output names differ. Trained weights and Kaggle run outputs are not included in full.
+The training notebooks run is done in Kaggle, the training scripts are included in `notebooks\` though. 
 
 ### Football object detection
 
@@ -126,8 +129,6 @@ Place the downloaded files in these locations, or pass their actual paths to the
 | YOLO football detector | `checkpoints\detection\bestDetection.pt` |
 | HRNet pitch-line model | `checkpoints\calibration\bestKeypoints.pt` |
 | OSNet re-identification model | `checkpoints\reid\bestReID.pt` |
-
-The downloaded file must be the inference checkpoint for the matching model. For example, the HRNet pipeline expects its line-map checkpoint with the 28 class names, while OSNet tracking needs a `torchreid`-compatible state dictionary.
 
 ## Pipeline stages
 
@@ -278,6 +279,13 @@ For NVIDIA GPUs, install PyTorch and torchvision builds that match your CUDA set
 | psutil and yacs | Kaggle resource checks and HRNet configuration. |
 | deep-person-reid (`torchreid`) | OSNet model and feature extraction. |
 
+## Current limitations
+
+The homography is only estimated when enough pitch landmarks are detected. That's the right call in closeups and replays, but it sometimes fails on perfectly usable wide shots too, and when it does, everything downstream in pitch coordinates disappears with it. The minimaps Voronoi view has a similar problem. It's built only from the players the camera happens to show, so when only a handful are visible the regions turn large and arbitrary and say very little about real space control.
+
+Tracking is another weak point. Identities are often lost and recreated after camera cuts or big zoom changes, so the number of IDs ends up far higher than the number of people on the pitch. This means per player stats like distance covered are really computed over short, broken tracks. Detection is a bit inconsistent as well, some medium shots with several clearly visible players come out with no annotations at all, and players near the edges of the frame sometimes never get a team assigned.
+
+Speed and distance are affected by every error from the homography, making unrealistic info. Possession behaves oddly at the start of a sequence, when it's calculated from only a few samples.
 
 ## Future work
 
@@ -290,7 +298,7 @@ For NVIDIA GPUs, install PyTorch and torchvision builds that match your CUDA set
 
 ## Use of AI
 
-AI was used to write the training scripts and to suggest syntax and other code changes. I reviewed the workflows and outputs by hand and tuned the parameters manually.
+I used AI assistants throughout this project to refactor much of the code, including the training notebooks and several pipeline stages, and to suggest fixes and syntax. I chose the datasets and models, trained the detector, pitch-line and re-identification models myself, reviewed the outputs of each stage, and tuned the parameters by hand.
 
 ## Credits
 
