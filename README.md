@@ -304,7 +304,7 @@ I used AI assistants throughout this project to refactor much of the code, inclu
 
 [SoccerNet](https://www.soccer-net.org/) for the datasets used in this project, and [FIFA's YouTube channel](https://www.youtube.com/@FIFA) for match footage used to test the pipeline.
 
-Homography estimation was the most demanding part of this project. The approach was inspired by [soccernet-calibration-sportlight](https://github.com/NikolasEnt/soccernet-calibration-sportlight/tree/master) and the work it builds on. This implementation uses a different dataset, keypoint setup and training process.
+Homography estimation was the most demanding part of this project. The approach was inspired by [soccernet-calibration-sportlight](https://github.com/NikolasEnt/soccernet-calibration-sportlight/tree/master) and the work it builds on, changing heatmap representation for direct line segmentation. This implementation uses a different dataset, keypoint setup and training process.
 
 The repository cites the following paper:
 
